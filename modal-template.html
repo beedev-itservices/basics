@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/modal-template.css">
+<!--Tab logo icon-->
+        <link rel="icon" 
+          type="image/png" 
+          href="images/logo.png">
+<!--Site/page Title for tab-->
+        <title> </title>
+    </head>
+<!--Page specific or JS specific Styling-->
+    <style>
+
+    </style>
+    <body>
+<!--Navigation-->
+        <nav class="center">
+            <a class="active" href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+<!--Main Page Content-->
+        <div class="main">
+    <!--Header-->
+            <header class="center">
+
+            </header>
+    <!--Page Content-->
+            <div class="content center">
+  
+<!--Main Gallery container-->
+<div class="gallery center">
+    <img src="122219c/family01.jpg" onclick="openModal();currentSlide(1)">
+    <img src="122219c/family02.jpg" onclick="openModal();currentSlide(2)">
+    <img src="122219c/family03.jpg" onclick="openModal();currentSlide(3)">
+    <img src="122219c/family04.jpg" onclick="openModal();currentSlide(4)">
+    <img src="122219c/family05.jpg" onclick="openModal();currentSlide(5)">
+    <img src="122219c/family06.jpg" onclick="openModal();currentSlide(6)">
+    <img src="122219c/family07.jpg" onclick="openModal();currentSlide(7)">
+    <img src="122219c/family08.jpg" onclick="openModal();currentSlide(8)">
+    <img src="122219c/family09.jpg" onclick="openModal();currentSlide(9)">
+    <img src="122219c/family10.jpg" onclick="openModal();currentSlide(10)">
+</div>
+
+<!--Modal container-->
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+
+<!--Gallery popout-->
+        <div class="mySlides">
+            <img src="122219c/family01.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="122219c/family02.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="122219c/family03.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="122219c/family04.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="122219c/family05.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="122219c/family06.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="122219c/family07.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="122219c/family08.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="122219c/family09.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="122219c/family10.jpg" style="width:100%">
+        </div>
+
+     </div>
+<!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+            </div>
+    <!--Footer-->
+            <footer class="center">
+                <p>&copy; 2020</p>
+                <p><a href="mailto:">Email Webmaster</a></p>
+            </footer>
+
+
+
+        </div>
+<!--Page specific script-->
+        <script>
+
+        </script>
+    </body>
+</html>

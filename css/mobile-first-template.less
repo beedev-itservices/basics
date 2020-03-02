@@ -1,0 +1,204 @@
+// CSS Reset
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// Mixins
+.flexrow() {display: flex;
+    flex-direction: row;}
+.flexaltrow() {display: flex;
+    flex-direction: row-reverse;}
+.flexcolumn() {display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: center;}
+.text(@align, @size, @color) {
+	text-align: @align;
+    font-size: @size;
+    color: @color;}	
+
+
+// Variables
+@1175: ~"only screen and (min-width: 1175px)";
+@930: ~"only screen and (min-width: 930px)";
+@730: ~"only screen and (min-width: 730px)";
+@400: ~"only screen and (min-width: 400px)";
+@mainbg: white;
+@mainfont: black;
+@navbg: darkgrey;
+@navfont: lightgrey;
+@border: 3px double blue;
+
+// Basics
+.center {margin: auto;}
+body {background-color: @mainbg;}
+
+// Navigation
+nav {.flexrow();
+    justify-content: space-evenly;
+    position: fixed;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: .3em;
+    border-bottom: @border;
+    background-color: @navbg;
+    z-index: 10;
+
+    a {.text(center, 1.2em, @navfont);
+        padding: .8em;
+        text-decoration: none;}
+
+    .active {background-color: @mainbg;}
+
+    .desktop {display: none;}
+}
+
+@media @400 {
+    nav {margin: .4em;
+    }
+}
+
+@media @730 {
+    nav {align-items: center;
+    
+        .desktop {display: block;}
+    }
+}
+
+
+// Main Content
+.main {.flexcolumn();
+    position: relative;
+    top: 130px;
+
+    header {.flexcolumn();
+        color: @mainfont;
+
+        .heading {.flexcolumn();
+            padding: .2em;}
+    }
+    
+    .content {.flexcolumn();
+        padding: .5em;
+    }
+
+    footer {.flexcolumn();
+        position: relative;
+        top: 60px;
+        border-top: @border;
+        border-bottom: @border;
+        width: 100%;
+        background-color: @altbg;
+        .text(center, 1.2em, @navfont);
+        padding: 1em 0;
+        margin-bottom: .2em;}
+}
+
+@media @400 {
+    .main {top: 210px;
+
+        header {
+
+            .heading {}
+        }
+
+        .content {padding: 1em;}
+    }
+}
+
+@media @730 {
+    .main {
+    
+        header {.flexrow();
+            justify-content: space-around;
+        
+            .heading {width: 25rem;
+    
+                .desktop {display: block;
+                    width: 10rem;}
+            }
+        }
+
+        .content {}
+    }
+}
+
+@media @930 {
+    .main {top: 125px;
+
+        header {
+
+            .heading {width: 35rem;
+
+                .desktop {width: 15rem;}
+            }
+        }
+
+        .content {}
+
+        footer {line-height: 1.5;}
+    }
+}
+
+@media @1175 {
+    .main {top: 80px;
+
+        header {
+
+            .heading {width: 45rem;
+
+                .desktop {width: 20rem;}
+            }
+        }
+
+        .content {}
+
+        footer {}
+    }
+}
