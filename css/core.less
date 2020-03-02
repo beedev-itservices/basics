@@ -1,54 +1,105 @@
-body {background-color: #f2f2f2;
-    padding: 0;
-	margin: 0;}
-* {
-  box-sizing: border-box;
+// CSS Reset
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-html {scroll-behavior: smooth;	
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-nav {position: fixed;
-    top: 35px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    background: #41beb4;
-    padding: 5px  0;
-    margin: 25px 0 15px 0;
-    text-align: right;
-    z-index: 10;
-
-    a {position: relative;
-        display: inline-block;
-        right: 5%;
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-        padding: 0 20px;}
-
-}
-
-.logo {top: 5px;
-  margin: 35px 5px 5px 5px;}
-
-.header {width: 100%;
-    position: relative;
-    top: 80px;
-    display: flex;
+// Mixins
+.flexrow() {display: flex;
+    flex-direction: row;}
+.flexcolumn() {display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;}
+    align-items: center;
+	justify-content: center;}
+.text(@align, @size, @color) {
+	text-align: @align;
+	font-size: @size;
+	color: @color;}	
 
-.content {
-  min-height: 600px;}
 
-.footer {display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 80px;}
+// Variables
+@1175: ~"only screen and (max-width: 1175px)";
+@930: ~"only screen and (max-width: 930px)";
+@730: ~"only screen and (max-width: 730px)";
+@400: ~"only screen and (max-width: 400px)";
+@mainbg: white;
+@mainfont: black;
+@navbg: darkgrey;
+@navfont: lightgrey;
+@border: 3px double blue;
 
+// Basics
+.center {margin: auto;}
+body {background-color: @mainbg;}
+
+// Navigation
+nav {.flexrow();
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	background-color: @navbg;
+
+	a {.text(center, 1em, @navfont);}
+
+}
+
+// Main Content
+.main {
+
+    header {
+
+    }
+    
+    .content {
+
+    }
+
+    footer {
+
+    }
+}
